@@ -6,9 +6,9 @@ import { Icon } from 'antd';
 import DocumentTitle from 'react-document-title';
 import GlobalFooter from '@/components/GlobalFooter';
 import SelectLang from '@/components/SelectLang';
+import getPageTitle from '@/utils/getPageTitle';
 import styles from './UserLayout.less';
 import logo from '../assets/logo.svg';
-import getPageTitle from '@/utils/getPageTitle';
 
 const links = [
   {

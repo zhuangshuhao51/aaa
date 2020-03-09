@@ -43,6 +43,40 @@ export async function updateRule(params = {}) {
   });
 }
 
+export async function queryAnalysis(params) {
+  return request(`/api/Analysis?${stringify(params)}`);
+}
+
+export async function removeAnalysis(params) {
+  return request('/api/Analysis', {
+    method: 'POST',
+    data: {
+      ...params,
+      method: 'delete',
+    },
+  });
+}
+
+export async function addAnalysis(params) {
+  return request('/api/Analysis', {
+    method: 'POST',
+    data: {
+      ...params,
+      method: 'post',
+    },
+  });
+}
+
+export async function updateAnalysis(params = {}) {
+  return request(`/api/Analysis?${stringify(params.query)}`, {
+    method: 'POST',
+    data: {
+      ...params.body,
+      method: 'update',
+    },
+  });
+}
+
 export async function fakeSubmitForm(params) {
   return request('/api/forms', {
     method: 'POST',

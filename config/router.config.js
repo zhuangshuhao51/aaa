@@ -47,6 +47,23 @@ export default [
           },
         ],
       },
+      {
+        path: '/products',
+        name: 'products',
+        icon: 'read',
+        routes: [
+          {
+            path: '/products/articles',
+            name: 'articles',
+            component: './Products/Analysis',
+          },
+          {
+            path: '/products/movies',
+            name: 'movies',
+            component: './Dashboard/Monitor',
+          },
+        ],
+      },
       // forms
       {
         path: '/form',

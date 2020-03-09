@@ -11,10 +11,10 @@ for (let i = 0; i < 46; i += 1) {
       'https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png',
       'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
     ][i % 2],
-    name: `标题 ${i}`,
-    title: `一个文章标题 ${i}`,
+    name: `TradeCode ${i}`,
+    title: `一个任务名称 ${i}`,
     owner: '曲丽丽',
-    desc: '描述',
+    desc: '这是一段描述',
     callNo: Math.floor(Math.random() * 1000),
     status: Math.floor(Math.random() * 10) % 4,
     updatedAt: new Date(`2017-07-${Math.floor(i / 2) + 1}`),
@@ -23,7 +23,7 @@ for (let i = 0; i < 46; i += 1) {
   });
 }
 
-function getRule(req, res, u) {
+function getAnalysis(req, res, u) {
   let url = u;
   if (!url || Object.prototype.toString.call(url) !== '[object String]') {
     url = req.url; // eslint-disable-line
@@ -75,7 +75,7 @@ function getRule(req, res, u) {
   return res.json(result);
 }
 
-function postRule(req, res, u, b) {
+function postAnalysis(req, res, u, b) {
   let url = u;
   if (!url || Object.prototype.toString.call(url) !== '[object String]') {
     url = req.url; // eslint-disable-line
@@ -103,7 +103,7 @@ function postRule(req, res, u, b) {
         owner: '曲丽丽',
         desc,
         callNo: Math.floor(Math.random() * 1000),
-        status: Math.floor(Math.random() * 10) % 2,
+        status: Math.floor(Math.random() * 10) % 5,
         updatedAt: new Date(),
         createdAt: new Date(),
         progress: Math.ceil(Math.random() * 100),
@@ -122,10 +122,10 @@ function postRule(req, res, u, b) {
       break;
   }
 
-  return getRule(req, res, u);
+  return getAnalysis(req, res, u);
 }
 
 export default {
-  'GET /api/rule': getRule,
-  'POST /api/rule': postRule,
+  'GET /api/analysis': getAnalysis,
+  'POST /api/analysis': postAnalysis,
 };

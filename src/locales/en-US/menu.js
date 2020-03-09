@@ -5,6 +5,7 @@ export default {
   'menu.register.result': 'Register Result',
   'menu.dashboard': 'Dashboard',
   'menu.dashboard.analysis': 'Analysis',
+  // 'menu.dashboard.analysis': 'Users',
   'menu.dashboard.monitor': 'Monitor',
   'menu.dashboard.workplace': 'Workplace',
   'menu.form': 'Form',
